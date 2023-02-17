@@ -34,3 +34,7 @@ write(S).
 member(X,[X|_]).
 member(X,[_|Tail]):-
     member(X,Tail).
+
+
+write_rev_list([]). /*base case*/
+write_rev_list([H|T]):-write_rev_list(T),nl,write(H). /* recursion case*/
