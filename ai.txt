@@ -27,3 +27,6 @@ power(X,N,Result):-
     N1 is N-1,
     power(X,N1,Result1), 
     Result is Result1*X.
+    
+sub(X,Y,S) :- S is X-Y,
+write(S).
