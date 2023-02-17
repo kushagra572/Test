@@ -30,3 +30,7 @@ power(X,N,Result):-
     
 sub(X,Y,S) :- S is X-Y,
 write(S).
+
+member(X,[X|_]).
+member(X,[_|Tail]):-
+    member(X,Tail).
