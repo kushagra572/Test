@@ -1,0 +1,29 @@
+fact(0,1). 
+fact(N,Result) :- N>0 , N1 is N-1 ,
+    fact(N1,M1),
+    Result is N*M1.
+    
+    
+max(X,Y,X) :- X>=Y.
+max(X,Y,Y) :- X<Y.
+
+sum([],0).
+sum([X|L],S):-
+    sum(L,S1),
+    S is X+S1.
+    
+count([],0).
+count([_|Tail], N) :- count(Tail, N1), N is N1 + 1.
+
+list_concat([],L,L).
+list_concat([X1|L1],L2,[X1|L3]) :- list_concat(L1,L2,L3).
+
+
+power(0,N,1) :- N>0.
+power(X,0,1) :- X>0.
+power(X,N,Result):-
+    X>0,
+    N>0,
+    N1 is N-1,
+    power(X,N1,Result1), 
+    Result is Result1*X.
